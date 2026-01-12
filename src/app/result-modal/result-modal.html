@@ -1,0 +1,10 @@
+<div class="overlay">
+  <div class="modal">
+    <h2>{{ winner() }} Wins!</h2>
+
+    <div class="buttons">
+      <button (click)="repeat.emit()">Repeat</button>
+      <button (click)="close.emit()">Close</button>
+    </div>
+  </div>
+</div>

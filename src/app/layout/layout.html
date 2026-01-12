@@ -1,0 +1,19 @@
+<div class="game-container">
+  <app-control-panel
+    [(reactionTimeMs)]="reactionTimeMs"
+    [gameRunning]="gameRunning()"
+    [playerScore]="playerScore()"
+    [computerScore]="computerScore()"
+    (start)="startGame()"
+  />
+
+  <app-game [matrix]="matrix()" (cellClick)="onCellClick($event)" />
+</div>
+
+@if(modalVisible()) {
+<app-result-modal
+  [winner]="modalWinner()"
+  (repeat)="onRepeat()"
+  (close)="modalVisible.set(false)"
+></app-result-modal>
+}

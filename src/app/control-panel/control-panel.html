@@ -1,0 +1,20 @@
+<div class="controls-container">
+  <div class="controls">
+    <label>
+      Time to react (ms):
+      <input
+        type="number"
+        [disabled]="gameRunning()"
+        [ngModel]="reactionTimeMs()"
+        (ngModelChange)="onValueChange($event)"
+      />
+    </label>
+
+    <button (click)="start.emit()" [disabled]="gameRunning()">Start</button>
+  </div>
+
+  <div class="score">
+    <span>Player: {{ playerScore() }}</span>
+    <span>Computer: {{ computerScore() }}</span>
+  </div>
+</div>

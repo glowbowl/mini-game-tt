@@ -1,0 +1,9 @@
+<div class="board">
+  @for (row of matrix(); track row) {
+  <div class="row">
+    @for (cell of row; track cell.id) {
+    <div class="cell" [ngClass]="cell.state" (click)="cellClick.emit(cell)"></div>
+    }
+  </div>
+  }
+</div>
